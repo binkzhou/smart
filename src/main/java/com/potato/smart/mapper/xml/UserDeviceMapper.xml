@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.potato.smart.mapper.UserDeviceMapper">
+    <select id="getUserDeviceList" parameterType="String" resultType="map">
+        SELECT user_device.id,device.sn,device.type,device.status
+        FROM user_device,device
+        WHERE user_device.did=device.id and user_device.uid = #{id}
+    </select>
+</mapper>
